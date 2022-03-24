@@ -1,0 +1,13 @@
+<div>
+    <label for="userName">UserName: </label>
+    <input id="userName" type="text" [formControl]="userName">
+</div>
+<div>
+    <label for="password">Password </label>
+    <input id="password" type="password" [formControl]="password">    
+</div>
+
+<p>Name: {{userName.value}}</p>
+<p>Password: {{password.value}}</p>
+
+<button type="button" (click)="updateUser()">Update Name</button>
