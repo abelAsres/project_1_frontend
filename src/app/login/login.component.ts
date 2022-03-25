@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginService } from '../login.service';
 @Component({
@@ -17,12 +18,13 @@ export class LoginComponent  {
     password : ['',[Validators.required,Validators.minLength(8),Validators.maxLength(50)]]
   })
 
-  constructor(private formBuilder: FormBuilder,private loginService: LoginService) { }
+  constructor(private formBuilder: FormBuilder,private loginService: LoginService, private router: Router) { }
 
   onSubmit(){
     //console.warn();
     this.loginService.login(this.loginForm.value).subscribe(user =>{
       console.log(user.userName);
+      this.router.navigateByUrl('/dashboard');
     });
   }
 }

@@ -18,4 +18,12 @@ export class NavigationComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  closeNav(){
+   this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
+   .pipe(
+     map(result => result.matches),
+     shareReplay()
+   );
+  }
+
 }

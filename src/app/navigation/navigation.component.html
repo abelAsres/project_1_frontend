@@ -5,8 +5,9 @@
       [opened]="false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="''">Home</a>
-      <a mat-list-item [routerLink]="'login'">Login</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="''">Home</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="'login'">Login</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="'dashboard'">Dashboard</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
